@@ -3,4 +3,7 @@ function getComputerChoice() {
   return choice;
 }
 
-console.log(getComputerChoice());
+function getPlayersChoice() {
+  let choice = prompt("Choose Garfield, dog or lasagna:");
+  return choice.toLowerCase();
+}
