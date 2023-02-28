@@ -10,9 +10,15 @@ function getComputerChoice() {
 }
 
 function getPlayersChoice() {
-  let choice = prompt("Choose Garfield, dog or lasagna:");
-  return choice.toLowerCase();
+  const btn = document.querySelectorAll("button");
+  console.log(btn);
+  btn.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      playRound(getComputerChoice(), "btn.innerHTML");
+    });
+  });
 }
+
 let playerScore = 0;
 let computerScore = 0;
 
@@ -40,13 +46,15 @@ function playRound(computerSelection, playerSelection) {
   }
 }
 
-function game() {
-  for (let i = 0; i < 5; i++) {
-    playRound(getComputerChoice(), getPlayersChoice());
-    console.log(
-      "Player Score: " + playerScore + " Computer Score: " + computerScore
-    );
-  }
-}
+getPlayersChoice();
 
-game();
+// function game() {
+//   for (let i = 0; i < 5; i++) {
+//     playRound(getComputerChoice(), getPlayersChoice());
+//     console.log(
+//       "Player Score: " + playerScore + " Computer Score: " + computerScore
+//     );
+//     }
+// }
+
+// game();
